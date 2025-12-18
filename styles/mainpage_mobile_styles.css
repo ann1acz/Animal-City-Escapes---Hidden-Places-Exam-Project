@@ -1,0 +1,487 @@
+
+body {
+    background-color: #FFF8EF;
+    margin: 0;
+    width: 430px;
+    max-width: 430px;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Work Sans", sans-serif;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1000;
+}
+
+.logo {
+    font-family: "Mansalva";
+    font-size: 20px;
+    text-decoration: none;
+    color: #1E1E1E;
+    z-index: 999;
+    position: fixed;
+    margin-left: 15px;
+}
+
+.ripped-nav {
+    position: fixed;
+    top: -15px;
+    z-index: 998;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    z-index: 999;
+    cursor: pointer;
+}
+
+.hamburger-icon {
+    width: 25px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hamburger-icon span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #1E1E1E;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.hamburger-menu.active .hamburger-icon span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger-menu.active .hamburger-icon span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active .hamburger-icon span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background-color: #FFF8EF;
+    z-index: 997;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    transition: right 0.3s ease;
+}
+
+.nav-menu.active {
+    right: 0;
+}
+
+.nav-menu a {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #1E1E1E;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 2px;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    position: relative;
+}
+
+.nav-menu a:hover {
+    color: #85A534;
+}
+
+.nav-menu a.active {
+    color: #85A534;
+}
+
+.nav-menu a.active .menu-text::after,
+.nav-menu a:hover .menu-text::after {
+    content: '';
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background-image: url('../assets/images/menu_arrow.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: 15px;
+}
+
+.menu-number {
+    font-family: "Mansalva";
+    min-width: 40px;
+    font-size: 20px;
+}
+
+.menu-text {
+    flex: 1;
+    font-size: 20px;
+}
+
+.menu-arrow {
+    margin-left: auto;
+    font-size: 16px;
+}
+
+.close-menu {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 998;
+    display: none;
+}
+
+.nav-menu.active .close-menu {
+    display: block;
+}
+
+.close-menu::before,
+.close-menu::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #1E1E1E;
+    border-radius: 2px;
+    transition: background-color 0.2s ease;
+}
+
+.close-menu::before {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.close-menu::after {
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+/* Typography */
+h1 {
+    font-family: "Mansalva";
+    font-size: 40px;
+    font-weight: 400;
+    color: #1E1E1E;
+    text-align: center;
+    line-height: 45px;
+    margin-top: 140px;
+    margin-bottom: 20px;
+    z-index: 10;
+}
+
+h2 {
+    font-family: "Work Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #1E1E1E;
+    text-align: center;
+    line-height: 24px;
+    margin: 20px 0;
+    max-width: 346px;
+}
+
+p {
+    font-family: "Work Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #1E1E1E;
+    line-height: 20px;
+    text-align: center;
+    max-width: 346px;
+}
+
+/* Content containers */
+.intro {
+    width: 100%;
+    max-width: 346px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 300px;
+    padding: 0 42px;
+}
+
+.intro-text{
+    width: 100%;
+    max-width: 346px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 42px;
+}
+
+.intro-text p {
+    margin-bottom: 15px;
+}
+
+/* Tags */
+.tags {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+    margin: 2px 0;
+    flex-wrap: wrap;
+    max-width: 346px;
+}
+
+.tags button {
+    background-color: #C74731;
+    color: #FFF8EF;
+    border: none;
+    border-radius: 2px;
+    padding: 5px 15px;
+    font-family: "Work Sans", sans-serif;
+    font-size: 9px;
+    font-weight: 500;
+    cursor: pointer;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Images */
+img {
+    display: block;
+    margin: 15px auto;
+}
+
+.animal-paper {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.ripped-bg {
+    position: absolute;
+    width: 100%;
+    z-index: -2;
+}
+
+/* Carousel */
+#cCarousel {
+    position: absolute;
+    top: 240px;
+    max-width: 280px;
+    margin: 30px auto;
+    position: relative;
+}
+
+#carousel-vp {
+    width: 280px;
+    height: 394px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+}
+
+#cCarousel-inner {
+    display: flex;
+    position: absolute;
+    transition: 0.3s ease-in-out;
+    gap: 20px;
+    left: 0px;
+}
+
+.cCarousel-item {
+    width: 280px;
+    height: 394px;
+    background-color: white;
+    border: none;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.cCarousel-item img {
+    width: 239px;
+    height: 298px;
+    object-fit: cover;
+    margin: 20px 20px 0 20px;
+    display: block;
+    border-radius: 0;
+}
+
+.infos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px;
+    background-color: white;
+    border-radius: 0;
+}
+
+.infos h3 {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #1E1E1E;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 10;
+}
+
+.arrow img {
+    width: 30px;
+}
+
+#left {
+    left: -55px;
+}
+
+#right {
+    right: -55px;
+}
+
+/* Buttons */
+button.see-menu-button,
+button.book-now-button {
+    background-color: #C74731;
+    color: #FFF8EF;
+    border: none;
+    border-radius: 2px;
+    padding: 10px 20px;
+    font-family: "Work Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 2px auto;
+    display: block;
+}
+
+/* Footer */
+footer {
+    position: relative;
+    width: 100%;
+    max-width: 430px;
+    min-height: 10px;
+    margin-top: 500px;
+    max-height: 150px;
+}
+
+.footer-credit {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 400;
+    color: #FFF8EF;
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+    font-size: 14px;
+}
+
+.footer-instagram-icon {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    width: 30px;
+    height: auto;
+}
+
+.footer-facebook-icon {
+    position: absolute;
+    right: 70px;
+    bottom: 30px;
+    width: 30px;
+    height: auto;
+}
+
+
+.discover {
+    position: absolute;
+    top: 1360px;
+    color: #FFF8EF;
+    font-weight: 500;
+}
+
+.fun-fact {
+    font-style: italic;
+    max-width: 346px;
+    margin: 20px auto;
+    padding: 0 42px;
+}
+
+select {
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: 1px solid #1E1E1E;
+    font-family: "Work Sans", sans-serif;
+    font-size: 14px;
+    margin: 10px 0;
+    background-color: #FFF8EF;
+}
+
+.mainpage-polaroid {
+    position: absolute;
+    top: 280px;
+    z-index: 5;
+}
+
+.raspberry-cake {
+    position: absolute;
+    top: 1140px;
+    height: auto;
+    z-index: 3;
+}
+
+.animal-paper {
+    position: absolute;
+    top: 100px;
+    left: 52%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.heron {
+    position: absolute;
+    top: 430px;
+    right: 0px;
+    z-index: 10;
+}

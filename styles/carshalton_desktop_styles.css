@@ -1,0 +1,626 @@
+body {
+    background-color: #FFF8EF;
+    margin: 0 auto;
+    width: 1440px;
+    height: 100vh;
+}
+
+.hole {
+    position: absolute;
+    top: 1030px;
+    left: 160px;
+    height: auto;
+    z-index: -1;
+}
+
+.ripped-bg {
+    position: absolute;
+    top: 1100px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: -2;
+}
+
+.carshalton-paper {
+    position: absolute;
+    top: 240px;
+    left: 440px;
+    height: auto;
+    z-index: -1;
+}
+
+.carshalton-polaroids {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    height: auto;
+    z-index: -2;
+}
+
+h1 {
+    font-family: "Mansalva";
+    font-size: 100px;
+    font-weight: 400;
+    font-style: normal;
+    color: #1E1E1E;
+    text-align: center;
+    line-height: 100px;
+    margin-top: 320px;
+}
+
+h2 {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+    color: #1E1E1E;
+    text-align: center;
+    margin-top: 160px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: #1E1E1E;
+    text-align: left;
+}
+
+p {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #1E1E1E;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+}
+
+.logo {
+    font-family: "Mansalva";
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+    text-decoration: none;
+    color: #1E1E1E;
+    position: fixed;
+    top: 10px;
+    left: 30px;
+    z-index: 999;
+}
+
+.ripped-nav {
+    position: absolute;
+    top: -20px;
+    left: -2px;
+    width: 100%;
+    height: auto;
+    z-index: 998;
+}
+
+.hamburger-menu {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    z-index: 999;
+    cursor: pointer;
+}
+
+.hamburger-icon {
+    width: 35px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hamburger-icon span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #1E1E1E;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.hamburger-menu.active .hamburger-icon span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger-menu.active .hamburger-icon span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active .hamburger-icon span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
+.nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80vw;
+    height: 100vh;
+    background-color: #FFF8EF;
+    z-index: 997;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding-left: 8%;
+    padding-right: 8%;
+    transition: right 0.3s ease;
+}
+
+.nav-menu.active {
+    right: 0;
+}
+
+.nav-menu a {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    color: #1E1E1E;
+    text-decoration: none;
+    padding: 20px;
+    border-radius: 2px;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    position: relative;
+}
+
+.nav-menu a:hover {
+    color: #85A534;
+}
+
+.nav-menu a.active {
+    color: #85A534;
+}
+
+.nav-menu a.active .menu-text::after,
+.nav-menu a:hover .menu-text::after {
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background-image: url('../assets/images/menu_arrow.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: 30px;
+}
+
+.menu-number {
+    font-family: "Mansalva";
+    min-width: 60px;
+}
+
+.menu-text {
+    flex: 1;
+}
+
+.menu-arrow {
+    margin-left: auto;
+    font-size: 30px;
+}
+
+.close-menu {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    z-index: 998;
+}
+
+.close-menu::before,
+.close-menu::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #1E1E1E;
+    border-radius: 2px;
+    transition: background-color 0.2s ease;
+}
+
+.close-menu::before {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.close-menu::after {
+    transform: translateY(-50%) rotate(-45deg);
+}   
+
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pond-polaroid {
+    position: absolute;
+    top: 1150px;
+    left: 100px;
+    height: auto;
+}
+
+.small-duck {   
+    position: absolute;
+    top: 1050px;
+    right: 100px;
+    height: auto;
+}
+
+.wildlife-middle-text {
+    margin-top: 400px;
+}
+
+.wildlife-middle-text h2, .wildlife-middle-text p {
+    color: #FFF8EF;
+}
+
+.duck-polaroid {
+    position: absolute;
+    top: 1600px;
+    right: 150px;
+    height: auto;
+}
+
+.family-middle-text {
+   margin-top: 400px;
+}
+
+.paragraph-text {
+    max-width: 749px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.price-text h2 {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+    color: #FFF8EF;
+    margin-top: 300px;
+}
+
+.price-text p {
+    max-width: 749px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 60px;
+    color: #FFF8EF;
+}
+
+.paragraph-text-2 {
+    font-family: "Work Sans", sans-serif;
+    max-width: 743px;
+    margin-left: auto;
+    margin-right: 380px;
+    margin-top: 410px;
+}
+
+.paragraph-text-2 h2 {
+    color: #FFF8EF;
+}
+
+.paragraph-text-2 p {
+    color: #FFF8EF;
+}
+
+.opening-hours {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: 580px;
+}
+
+
+.crowd-level {
+    position: absolute;
+    top: 3260px;
+    right: 280px;
+}
+
+select {
+    color: #FFF8EF;
+    background-color: #C74731;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    border: none;
+    padding: 10px 20px;  
+    border-radius: 2px;
+    position: absolute;
+    right: 100px;
+}
+
+.how-crowded {
+    margin-bottom: 80px;
+}
+
+.crowd-level-diagram {
+    margin-top: 100px;
+}
+
+.popular-hours {
+    text-align: left;
+    margin-left: 200px;
+}
+
+.crowd-level-info {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #1E1E1E;
+    margin-top: 20px;
+    max-width: 600px;
+    text-align: left;
+}
+
+.fun-fact {
+    margin-top: 620px;
+    color: #1E1E1E;
+    max-width: 743px;
+}
+
+.opening-hours {
+    position: absolute;
+    top: 2060px;
+    right: 300px;
+}
+
+.opening-hours h2, .opening-hours p {
+    color: #FFF8EF;
+    width: 100%;
+    top: 2960px;
+    left: -330px;
+}
+
+.duck-polaroid2 {
+    position: absolute;
+    top: 2400px;
+    left: 100px;
+    height: auto;
+}
+
+.landmarks-middle-text {
+    margin-top: 1900px;
+}
+
+.landmarks-middle-text h2, .landmarks-middle-text p {
+    color: #FFF8EF;
+}
+
+.suburb-middle-text {
+    margin-top: 400px;
+}
+
+.dietary {
+    position: absolute;
+    top: 4750px;
+    left: 300px;
+}
+
+.dietary h2 {
+    color: #FFF8EF;
+    font-weight: 500;
+}
+
+ul {
+    margin-top: 20px;
+    padding-left: 20px;
+    width: 418px;
+    gap: 4px;
+}
+
+li {
+    font-family: "Work Sans", sans-serif;
+    margin-top: 20px;
+    color: #1E1E1E;
+
+}
+
+.parking {
+    position: absolute;
+    max-width: 743px;
+    top: 5250px;
+    left: 680px;
+}
+
+.parking h2, .parking p {
+    color: #FFF8EF;
+    margin-bottom: 30px;
+}
+
+.carshalton-google-map {
+    position: absolute;
+    top: 5950px;
+    left: 500px;
+}
+
+.carshalton-address {
+    position: absolute;
+    top: -130px;
+    left: 660px;
+    color: #1E1E1E;
+    text-align: left;
+    width: 500px;
+}
+
+.carshalton-address h2 {
+    margin-bottom: 30px;
+    text-align: left;
+    margin-top: 150px;
+}
+
+.carshalton-address p {
+    text-align: left;
+}
+
+.heron-illustration {
+    position: absolute;
+    top: 3250px;
+    left: 0px;
+    height: auto;
+    z-index: 10;
+}
+
+.lillypad-illustration {
+    position: absolute;
+    top: 3900px;
+    right: 0px;
+    height: auto;
+    z-index: 10;
+}
+
+.pond-polaroids-three{
+    position: absolute;
+    top: 4500px;
+    left: 80px;
+    height: auto;
+    z-index: 10;
+}
+
+.plant-illustration {
+    position: absolute;
+    top: 5050px;
+    left: 250px;
+    height: auto;
+    z-index: 10;
+}
+
+.pond-polaroid-four {
+    position: absolute;
+    top: 5000px;
+    right: 100px;
+    height: auto;
+    z-index: 10;
+}
+
+.duck-illustration {
+    position: absolute;
+    top: 6200px;
+    right: 100px;
+    height: auto;
+    z-index: 10;
+}
+
+.plant-illustration-two {
+    position: absolute;
+    top: 6860px;
+    left: 200px;
+    height: auto;
+    z-index: 10;
+}
+
+.Booking {
+    position: absolute;
+    top: 6750px;
+    left: 650px;
+    width: 682px;
+}
+
+.Booking h2, .Booking p {
+    color: #FFF8EF;
+    margin-bottom: 30px;
+}
+
+.tags {
+    display: flex;
+    gap: 30px;
+    margin-top: 145px;
+    justify-content: center;
+}
+
+.tags button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF8EF;
+    background-color: #C74731;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    border: none;
+    padding: 10px 40px;
+    border-radius: 2px;
+}
+
+.contact {
+    position: absolute;
+    top: 6550px;
+    right: 350px;
+    width: 682px;
+}
+
+.contact h2, .contact p {
+    color: #FFF8EF;
+    margin-bottom: 30px;
+}
+
+.follow {
+    position: absolute;
+    top: 6750px;
+    left: 620px;
+    width: 682px;
+    text-align: center;
+}
+
+.follow h2, .follow p {
+    color: #FFF8EF;
+    margin-bottom: 30px;
+}
+
+.jurassic-facebook-icon {
+    margin-right: 30px;
+}
+
+footer {
+    position: absolute;
+    top: 7670px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+}
+
+.footer-credit {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #FFF8EF;
+    position: absolute;
+    left: 111px;
+    bottom: 111px;
+    font-size: 32px;
+}
+
+.footer-instagram-icon {
+    position: absolute;
+    right: 109px;
+    bottom: 111px;
+    width: 70px;
+    height: auto;
+}
+
+.footer-facebook-icon {
+    position: absolute;
+    right: 209px;
+    bottom: 111px;
+    width: 70px;
+    height: auto;
+}

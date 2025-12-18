@@ -1,0 +1,684 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #FFF8EF;
+    margin: 0;
+    width: 430px;
+    max-width: 430px;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Work Sans", sans-serif;
+}
+
+/* Navigation */
+nav {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1000;
+}
+
+.logo {
+    font-family: "Mansalva";
+    font-size: 20px;
+    text-decoration: none;
+    color: #1E1E1E;
+    z-index: 999;
+}
+
+.ripped-nav {
+    position: absolute;
+    top: -15px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 998;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    z-index: 999;
+    cursor: pointer;
+}
+
+.hamburger-icon {
+    width: 25px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hamburger-icon span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #1E1E1E;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.hamburger-menu.active .hamburger-icon span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger-menu.active .hamburger-icon span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active .hamburger-icon span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: #FFF8EF;
+    z-index: 997;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    transition: right 0.3s ease;
+}
+
+.nav-menu.active {
+    right: 0;
+}
+
+.nav-menu a {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #1E1E1E;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 2px;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    position: relative;
+}
+
+.nav-menu a:hover {
+    color: #85A534;
+}
+
+.nav-menu a.active {
+    color: #85A534;
+}
+
+.nav-menu a.active .menu-text::after,
+.nav-menu a:hover .menu-text::after {
+    content: '';
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background-image: url('../assets/images/menu_arrow.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: 15px;
+}
+
+.menu-number {
+    font-family: "Mansalva";
+    min-width: 40px;
+    font-size: 20px;
+}
+
+.menu-text {
+    flex: 1;
+    font-size: 20px;
+}
+
+.menu-arrow {
+    margin-left: auto;
+    font-size: 16px;
+}
+
+.close-menu {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 998;
+    display: none;
+}
+
+.nav-menu.active .close-menu {
+    display: block;
+}
+
+.close-menu::before,
+.close-menu::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #1E1E1E;
+    border-radius: 2px;
+    transition: background-color 0.2s ease;
+}
+
+.close-menu::before {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.close-menu::after {
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+/* Typography */
+h1 {
+    font-family: "Mansalva";
+    font-size: 40px;
+    font-weight: 400;
+    color: #1E1E1E;
+    text-align: center;
+    line-height: 45px;
+    margin-top: 150px;
+    margin-bottom: 20px;
+    z-index: 10;
+}
+
+h2 {
+    font-family: "Work Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #1E1E1E;
+    text-align: center;
+    line-height: 24px;
+    margin: 20px 0;
+    max-width: 346px;
+}
+
+p {
+    font-family: "Work Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #1E1E1E;
+    line-height: 20px;
+    text-align: center;
+    max-width: 346px;
+}
+
+/* Content containers */
+.whiskers-middle-text,
+.opening-hours,
+.parking,
+.crowd-level,
+.dietary,
+.Booking,
+.contact,
+.follow {
+    width: 100%;
+    max-width: 346px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 20px auto;
+    padding: 0 42px;
+}
+
+.whiskers-middle-text {
+    position: absolute;
+    top: 520px;
+    max-width: 400px;
+}
+
+.follow {
+    position: relative;
+    width: 100%;
+    max-width: 346px;
+    margin-bottom: 500px;
+    text-align: center;
+    line-height: 0;
+}
+
+.follow h2 {
+    margin-bottom: 30px;
+    line-height: 24px;
+}
+
+/* Tags */
+.tags {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 140px 0;
+    flex-wrap: wrap;
+    max-width: 346px;
+}
+
+.tags button {
+    background-color: #C74731;
+    color: #FFF8EF;
+    border: none;
+    border-radius: 2px;
+    padding: 5px 15px;
+    font-family: "Work Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* Buttons */
+button.see-menu-button,
+button.book-now-button {
+    background-color: #C74731;
+    color: #FFF8EF;
+    border: none;
+    border-radius: 2px;
+    padding: 10px 30px;
+    font-family: "Work Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 20px auto;
+    display: block;
+}
+
+/* Select */
+select {
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: none;
+    font-family: "Work Sans", sans-serif;
+    font-size: 14px;
+    margin: 10px 0;
+    background-color: #C74731;
+    color: #FFF8EF;
+}
+
+/* Images */
+img {
+    display: block;
+    margin: 15px auto;
+}
+
+.whiskers-paper {
+    position: absolute;
+    top: 160px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.ripped-bg {
+    position: absolute;
+    top: 800px;
+    z-index: -10;
+}
+
+.header-polaroid {
+    position: absolute;
+    top: 50px;
+    z-index: -3;
+}
+
+.pastries-polaroid {
+    position: absolute;
+    top: 780px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -5;
+}
+
+.cat-polaroid {
+    position: absolute;
+    top: 2200px;
+    z-index: 2;
+}
+
+.cat-polaroids {
+    position: absolute;
+    top: 1460px;
+    z-index: 3;
+}
+
+.cat-polaroids2 {
+    position: absolute;
+    top: 3710px;
+    z-index: 3;
+}
+
+.cat-sitting {
+    position: absolute;
+    top: 4200px;
+    right: 20px;
+    z-index: 2;
+}
+
+.loaf-cat {
+    position: absolute;
+    top: 5720px;
+    right: 20px;
+    z-index: 2;
+}
+
+.raspberry-cake {
+    position: absolute;
+    left: 0px;
+    top: 1330px;
+    z-index: 5;
+}
+
+.coffee {
+    position: absolute;
+    top: 2460px;
+    right: 0px;
+    height: auto;
+    z-index: 10;
+}
+
+.macaroons {
+    position: absolute;
+    top: 5120px;
+    left: 20px;
+    z-index: 2;
+}
+
+/* Social icons */
+.whiskers-facebook-icon {
+    position: absolute;
+    height: auto;
+    right: 178px;
+    top: 60px;
+}
+
+.whiskers-instagram-icon {
+    position: absolute;
+    height: auto;
+    right: 128px;
+    top: 60px;
+}
+
+/* Opening hours */
+.opening-hours {
+    position: absolute;
+}
+
+.opening-hours h2 {
+    position: absolute;
+    top: 20px;
+    color: #FFF8EF;
+    margin-bottom: 15px;
+}
+
+.opening-hours-days,
+.opening-hours-times {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 22px;
+    color: #FFF8EF;
+    vertical-align: top;
+}
+
+.opening-hours-days {
+    position: absolute;
+    top: 90px;
+    left: 30px;
+    text-align: left;
+    font-weight: 500;
+    margin-right: 20px;
+}
+
+.opening-hours-times {
+    position: absolute;
+    top: 90px;
+    right: 30px;
+    text-align: right;
+    font-weight: 400;
+}
+
+/* Dietary list */
+.dietary-list {
+    list-style: disc;
+    text-align: left;
+    font-size: 14px;
+    line-height: 22px;
+    padding-left: 20px;
+    margin-left: -150px;
+}
+
+.dietary-info {
+    text-align: left;
+}
+
+.dietary h2 {
+    text-align: left;
+}
+
+/* Maps */
+.whiskers-google-map {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 0 42px;
+}
+
+.whiskers-google-map iframe {
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.whiskers-address h2 {
+    display: inline-block;
+    font-size: 20px;
+    margin: 0;
+    margin-right: 20px;
+    vertical-align: top;
+    line-height: 20px;
+}
+
+.whiskers-address p {
+    display: inline-block;
+    font-size: 14px;
+    vertical-align: top;
+    text-align: left;
+    margin: 0;
+    line-height: 20px;
+}
+
+/* Crowd level */
+.crowd-level-diagram {
+    position: absolute;
+    top: 3150px;
+    max-width: 300px;
+    margin: 15px auto;
+}
+
+.popular-hours {
+    position: absolute;
+    top: 3100px;
+    left: 80px;
+    text-align: center;
+}
+
+.days-select {
+    position: absolute;
+    top: 3083px;
+    right: 80px;
+}
+
+.how-crowded {
+    position: absolute;
+    top: 3000px;
+    text-align: center;
+}
+
+.crowd-level-info {
+    position: absolute;
+    top: 3370px;
+    max-width: 300px;
+    font-size: 14px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+/* Text sections */
+.price-text {
+    position: absolute;
+    top: 1100px;
+}
+
+.price-text h2, 
+.price-text {
+    color: #FFF8EF;
+}
+
+.paragraph-text-2 {
+    position: absolute;
+    top: 1900px;
+}
+
+/* Utility classes */
+.fun-fact {
+    max-width: 400px;
+    padding: 0 42px;
+    text-align: center;
+    position: absolute;
+    top: 3640px;
+}
+
+.fun-fact {
+    color: #FFF8EF;
+}
+
+/* Footer */
+footer {
+    position: absolute;
+    top: 5500px;
+    width: 100%;
+    max-width: 430px;
+    min-height: 10px;
+    margin-top: 500px;
+    max-height: 150px;
+}
+
+.footer-credit {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 400;
+    color: #FFF8EF;
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+    font-size: 14px;
+}
+
+.footer-instagram-icon {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    width: 30px;
+    height: auto;
+}
+
+.footer-facebook-icon {
+    position: absolute;
+    right: 70px;
+    bottom: 30px;
+    width: 30px;
+    height: auto;
+}
+
+
+.parking {
+    position: absolute;
+    top: 4450px;
+}
+
+.parking h2, .parking p {
+    color: #FFF8EF;
+    width: 400px;
+}
+
+
+.opening-hours {
+    position: absolute;
+    top: 2650px;
+}
+
+.whiskers-google-map {
+    position: absolute;
+    top: 4870px;
+}
+
+.whiskers-address {
+    position: absolute;
+    top: -100px;
+}
+
+.booking {
+    position: absolute;
+    top: 5300px;
+}
+
+.booking h2, .booking p {
+    color: #FFF8EF;
+}
+
+.contact {
+    position: absolute;
+    top: 5520px;
+    width: 400px;
+}
+
+.contact h2, .contact p {
+    color: #FFF8EF;
+}
+
+.follow {
+    position: absolute;
+    top: 5620px;
+    width: 400px;
+}
+
+.follow h2 {
+    color: #FFF8EF;
+}
+
+.dietary {
+    position: absolute;
+    top: 4080px;
+    text-align: left;
+}
+
+.price-text {
+    position: absolute;
+    top: 1100px;
+}

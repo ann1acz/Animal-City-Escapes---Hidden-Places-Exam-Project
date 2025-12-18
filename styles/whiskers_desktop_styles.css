@@ -1,0 +1,705 @@
+
+body {
+    background-color: #FFF8EF;
+    margin: 0 auto;
+    width: 1440px;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.mainpage-polaroid {
+    position: absolute;
+    top: 400px;
+    left: -2px;
+    z-index: -1;
+}
+
+.mainpage-polaroid2 {
+    position: absolute;
+    top: 490px;
+    right: 60px;
+    z-index: -1;
+}
+
+.ripped-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: -2;
+}
+
+.heron {
+    position: absolute;
+    top: 1000px;
+    right: 20px;
+    z-index: -1;
+}
+
+.raspberry-cake {
+    position: absolute;
+    top: 1000px;
+    left: 0px;
+    z-index: -1;
+}
+
+h1 {
+    font-family: "Mansalva";
+    font-size: 100px;
+    font-weight: 400;
+    font-style: normal;
+    color: #1E1E1E;
+    text-align: center;
+    line-height: 100px;
+    margin-top: 250px;
+}
+
+h2 {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+    color: #1E1E1E;
+    text-align: center;
+    margin-top: 160px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: #1E1E1E;
+    text-align: left;
+}
+
+p {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #1E1E1E;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+}
+
+.logo {
+    font-family: "Mansalva";
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+    text-decoration: none;
+    color: #1E1E1E;
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    z-index: 999;
+}
+
+.ripped-bg {
+    position: absolute;
+    top: 600px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: -3;
+}
+
+.ripped-nav {
+    position: absolute;
+    top: -20px;
+    left: -2px;
+    width: 100%;
+    height: auto;
+    z-index: 998;
+}
+
+.hamburger-menu {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    z-index: 999;
+    cursor: pointer;
+}
+
+.hamburger-icon {
+    width: 35px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hamburger-icon span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #1E1E1E;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.hamburger-menu.active .hamburger-icon span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger-menu.active .hamburger-icon span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active .hamburger-icon span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
+.nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80vw;
+    height: 100vh;
+    background-color: #FFF8EF;
+    z-index: 997;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding-left: 8%;
+    padding-right: 8%;
+    transition: right 0.3s ease;
+}
+
+.nav-menu.active {
+    right: 0;
+}
+
+.nav-menu a {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    color: #1E1E1E;
+    text-decoration: none;
+    padding: 20px;
+    border-radius: 2px;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    position: relative;
+}
+
+.nav-menu a:hover {
+    color: #85A534;
+}
+
+.nav-menu a.active {
+    color: #85A534;
+}
+
+.nav-menu a.active .menu-text::after,
+.nav-menu a:hover .menu-text::after {
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background-image: url('../assets/images/menu_arrow.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: 30px;
+}
+
+.menu-number {
+    font-family: "Mansalva";
+    min-width: 60px;
+}
+
+.menu-text {
+    flex: 1;
+}
+
+.menu-arrow {
+    margin-left: auto;
+    font-size: 30px;
+}
+
+.close-menu {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    z-index: 998;
+}
+
+.close-menu::before,
+.close-menu::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #1E1E1E;
+    border-radius: 2px;
+    transition: background-color 0.2s ease;
+}
+
+.close-menu::before {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.close-menu::after {
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+.close-menu:hover::before,
+.close-menu:hover::after {
+    color: #85A534;
+}
+
+.whiskers-paper {
+    position: absolute;
+    top: 200px;
+    left: 480px;
+    height: auto;
+    z-index: -1;
+}
+
+.header-polaroid {
+    position: absolute;
+    top: 120px;
+    left: 0;
+    height: auto;
+    z-index: -2;
+}
+
+.pastries-polaroid {
+    position: absolute;
+    top: 1120px;
+    right: 130px;
+    height: auto;
+    z-index: -2;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.paragraph-text {
+    max-width: 1007px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.price-text h2 {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+    color: #FFF8EF;
+    text-align: center;
+    margin-top: 560px;
+    margin-bottom: 10px;
+}
+
+.price-text p {
+    max-width: 749px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 60px;
+    color: #FFF8EF;
+}
+
+.cat-polaroids {
+    position: absolute;
+    top: 1940px;
+    left: 100px;
+    height: auto;
+    max-width: 705px;
+    max-height: auto;
+}
+
+.cat-polaroid {
+    position: absolute;
+    top: 2800px;
+    right: 160px;
+    height: auto;
+}
+
+.coffee {
+    position: absolute;
+    top: 2540px;
+    right: 20px;
+    height: auto;
+    z-index: 10;
+}
+
+.paragraph-text-2 {
+    font-family: "Work Sans", sans-serif;
+    max-width: 743px;
+    margin-left: auto;
+    margin-right: 380px;
+    margin-top: 410px;
+}
+
+.paragraph-text-2 h2 {
+    color: #FFF8EF;
+}
+
+.paragraph-text-2 p {
+    color: #FFF8EF;
+}
+
+.opening-hours {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: 300px;
+}
+
+.opening-hours h2 {
+    position: absolute;
+    color: #FFF8EF;
+    width: 100%;
+    top: 2900px;
+    left: -220px;
+}
+
+.opening-hours-days {
+    position: absolute;
+    color: #FFF8EF;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 10px;
+    text-align: left;
+    left: 500px;
+    top: 3160px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.opening-hours-times {
+    position: absolute;
+    color: #FFF8EF;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 10px;
+    text-align: right;
+    left: 800px;
+    top: 3160px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.cat-sitting {
+    margin-top: 960px;
+}
+
+.crowd-level {
+    position: absolute;
+    top: 3600px;
+    right: 300px;
+}
+
+select {
+    color: #FFF8EF;
+    background-color: #C74731;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    border: none;
+    padding: 10px 20px;  
+    border-radius: 2px;
+    position: absolute;
+    right: 100px;
+}
+
+.how-crowded {
+    margin-bottom: 80px;
+}
+
+.crowd-level-diagram {
+    margin-top: 100px;
+}
+
+.popular-hours {
+    text-align: left;
+}
+
+.crowd-level-info {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #1E1E1E;
+    margin-top: 20px;
+    max-width: 600px;
+    text-align: left;
+}
+
+.fun-fact {
+    margin-top: 60px;
+    color: #FFF8EF;
+}
+
+.dietary {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: 300px;
+}
+
+.dietary h2 {
+    position: absolute;
+    color: #1E1E1E;
+    width: 100%;
+    top: 5000px;
+    left: -260px;
+}
+
+.dietary-info {
+    position: absolute;
+    color: #1E1E1E;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 10px;
+    text-align: left;
+    left: 500px;
+    top: 5250px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.dietary-list {
+    position: absolute;
+    color: #1E1E1E;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 10px;
+    padding-left: 20px;
+    text-align: left;
+    left: 500px;
+    top: 5280px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.dietary-list li {
+    color: #1E1E1E;
+    margin-top: 20px;
+}
+
+ul {
+    margin-top: 20px;
+    padding-left: 20px;
+    width: 418px;
+    gap: 4px;
+}
+
+li {
+    font-family: "Work Sans", sans-serif;
+    margin-top: 20px;
+    color: #1E1E1E;
+
+}
+
+.cat-polaroids2 {
+    position: absolute;
+    top: 5150px;
+    right: 250px;
+    height: auto;
+    max-width: 705px;
+    max-height: auto;
+}
+
+.parking {
+    position: absolute;
+    max-width: 743px;
+    top: 5840px;
+    right: 600px;
+}
+
+.parking h2, .parking p {
+    color: #FFF8EF;
+}
+
+.macaroons {
+    position: absolute;
+    top: 6200px;
+    left: 100px;
+    height: auto;
+    z-index: 10;
+}
+
+.whiskers-google-map {
+    position: absolute;
+    top: 6800px;
+    left: 500px;
+}
+
+.whiskers-address {
+    position: absolute;
+    top: -130px;
+    left: 660px;
+    color: #1E1E1E;
+    text-align: left;
+    width: 500px;
+}
+
+.whiskers-address h2 {
+    margin-bottom: 30px;
+    text-align: left;
+    margin-top: 150px;
+}
+
+.whiskers-address p {
+    text-align: left;
+}
+
+.loaf-cat {
+    position: absolute;
+    top: 7300px;
+    right: 80px;
+    height: auto;
+    z-index: 10;
+}
+
+.Booking {
+    position: absolute;
+    top: 7700px;
+    left: 650px;
+    width: 682px;
+}
+
+.Booking h2, .Booking p {
+    color: #FFF8EF;
+    margin-bottom: 30px;
+}
+
+.tags {
+    display: flex;
+    gap: 30px;
+    margin-top: 145px;
+    justify-content: center;
+}
+
+.tags button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF8EF;
+    background-color: #C74731;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    border: none;
+    padding: 10px 40px;
+    border-radius: 2px;
+}
+
+.see-menu-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF8EF;
+    background-color: #C74731;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    border: none;
+    padding: 16px 40px;
+    border-radius: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+.book-now-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF8EF;
+    background-color: #C74731;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    border: none;
+    padding: 16px 40px;
+    border-radius: 2px;
+    margin-top: 20px;
+    position: absolute;
+    top: 8040px;
+    left: 910px;
+}
+
+.contact {
+    position: absolute;
+    top: 8100px;
+    left: 650px;
+    width: 682px;
+}
+
+.contact h2, .contact p {
+    color: #FFF8EF;
+    margin-bottom: 30px;
+}
+
+.follow {
+    position: absolute;
+    top: 8350px;
+    left: 650px;
+    width: 682px;
+    text-align: center;
+}
+
+.follow h2, .follow p {
+    color: #FFF8EF;
+    margin-bottom: 30px;
+}
+
+.whiskers-facebook-icon {
+    margin-right: 30px;
+    align-items: center;
+}
+
+footer {
+    position: absolute;
+    top: 9120px;
+    left: 0;
+    width: 100%;
+    height: 200px;
+}
+
+.footer-credit {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #FFF8EF;
+    position: absolute;
+    left: 111px;
+    bottom: 111px;
+    font-size: 32px;
+}
+
+.footer-instagram-icon {
+    position: absolute;
+    right: 109px;
+    bottom: 111px;
+    width: 70px;
+    height: auto;
+}
+
+.footer-facebook-icon {
+    position: absolute;
+    right: 209px;
+    bottom: 111px;
+    width: 70px;
+    height: auto;
+}
