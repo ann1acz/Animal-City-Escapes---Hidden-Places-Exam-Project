@@ -1,6 +1,9 @@
 # Animal City Escapes - Hidden Places
 
-An interactive web guide to discovering hidden places and secret escapes in the city.
+An interactive web guide to discovering hidden places and secret escapes in the city.\
+This website is coded for mobile and Desktop 
+Desktop resolution: 1920x1080px
+Mobile resolution: 430x932px
 
 ## View the Site
 
